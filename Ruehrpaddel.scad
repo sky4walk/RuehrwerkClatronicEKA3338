@@ -19,7 +19,7 @@ module MotorHalterung()
     Hoehe  = 2;
     MotorWelle = 30;
     MotorBefAbstand = 40;
-    TempSensorD = 22;
+    TempSensorD = 20;
     
     difference() 
     {

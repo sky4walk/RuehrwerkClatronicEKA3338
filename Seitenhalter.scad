@@ -1,16 +1,6 @@
 // Andre Betz
 // github@AndreBetz.de
-SchraubeM3 = 3;
-
-module Bohrloch(Durchmesser,posX,posY,Hoehe) 
-{
-    translate([posX,posY,-1])
-        cylinder(
-            Hoehe,
-            Durchmesser/2,
-            Durchmesser/2,
-            center = false);
-}
+include <Bohrung.scad>
 
 module Seitenhalter()
 {

@@ -1,42 +1,29 @@
 // Andre Betz
 // github@AndreBetz.de
-SchraubeM3 = 3;
+include <Bohrung.scad>
 
-module Bohrloch(Durchmesser,posX,posY,Hoehe) 
+module Ruehrpaddel()
 {
-    translate([posX,posY,-1])
-        cylinder(
-            Hoehe,
-            Durchmesser/2,
-            Durchmesser/2,
-            center = false);
-}
-
-module MotorHalterung()
-{
-    Laenge = 470;
+    Laenge = 300;
     Breite = 100;
     Hoehe  = 2;
-    MotorWelle = 30;
-    MotorBefAbstand = 40;
-    TempSensorD = 20;
+    Ecke   = 30;
     
     difference() 
     {
-        translate([-Laenge/2,-Breite/2,0])
-            cube([Laenge,Breite,Hoehe]);
+        union() {
+            
+            translate([-Laenge/2,-Breite/2+Ecke,0])
+                cube([Laenge,Breite-Ecke,Hoehe]);
+            
+            translate([-Laenge/2+Ecke,-Breite/2,0])
+                cube([Laenge-Ecke*2,Ecke,Hoehe]);
+        }
+               
+        Bohrloch(SchraubeM3,0,Breite/2-10,Hoehe*3);
+        Bohrloch(SchraubeM3,0,Breite/2-40,Hoehe*3);
         
-        Bohrloch(SchraubeM3,-Laenge/2+40,0,Hoehe*3);
-        Bohrloch(SchraubeM3, Laenge/2-40,0,Hoehe*3);
-        
-        Bohrloch(TempSensorD, Laenge/4,0,Hoehe*3);
-
-        Bohrloch(MotorWelle, 0,0,Hoehe*3);
-        Bohrloch(SchraubeM3,  MotorBefAbstand/2, MotorBefAbstand/2,Hoehe*3);
-        Bohrloch(SchraubeM3,  MotorBefAbstand/2,-MotorBefAbstand/2,Hoehe*3);
-        Bohrloch(SchraubeM3, -MotorBefAbstand/2, MotorBefAbstand/2,Hoehe*3);
-        Bohrloch(SchraubeM3, -MotorBefAbstand/2,-MotorBefAbstand/2,Hoehe*3);
     }
 }
 
-MotorHalterung();
+Ruehrpaddel();

@@ -6,7 +6,7 @@ module Seitenhalter()
 {
     Laenge = 30;
     Breite = 100;
-    Hoehe  = 2;
+    Hoehe  = 4;
     
     difference() 
     {
@@ -36,5 +36,7 @@ module Seitenhalter()
         Bohrloch(SchraubeM3,0,0,Hoehe*3);
     }
 }
-
-Seitenhalter();
+projection()
+{
+    Seitenhalter();
+}

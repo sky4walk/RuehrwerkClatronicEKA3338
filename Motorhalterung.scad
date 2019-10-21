@@ -6,7 +6,7 @@ module MotorHalterung()
 {
     Laenge = 470;
     Breite = 100;
-    Hoehe  = 2;
+    Hoehe  = 4;
     MotorWelle = 30;
     MotorBefAbstand = 40;
     TempSensorD = 22;
@@ -29,4 +29,7 @@ module MotorHalterung()
     }
 }
 
-MotorHalterung();
+projection()
+{
+    MotorHalterung();
+}

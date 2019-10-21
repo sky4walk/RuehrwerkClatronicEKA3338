@@ -25,5 +25,7 @@ module Ruehrpaddel()
         
     }
 }
-
-Ruehrpaddel();
+projection()
+{
+    Ruehrpaddel();
+}

@@ -9,7 +9,6 @@ module Gewindestange()
     DurchmesserAussen = 10;
     DurchmesserInnen  = 8;
     AusschnittHoehe   = 50;
-    AusschnittBreite  = 4;
     
     difference() 
     {
@@ -17,19 +16,19 @@ module Gewindestange()
         translate([0,0,-1])
             cylinder(Laenge+2,DurchmesserInnen/2,DurchmesserInnen/2,false);
         
-        translate([-DurchmesserAussen,-AusschnittBreite/2,0])
-            cube([DurchmesserAussen*2,AusschnittBreite,AusschnittHoehe]);
+        translate([-DurchmesserAussen,-BlechDicke/2,-1])
+            cube([DurchmesserAussen*2,BlechDicke,AusschnittHoehe+1]);
         
         
         rotate([0,90,90])
             translate([-Laenge+10,0,-DurchmesserAussen*1.5])
-                Bohrloch(SchraubeM2,0,0,DurchmesserAussen*3);
+                Bohrloch(SchraubeM3,0,0,DurchmesserAussen*3);
         rotate([0,90,90])
             translate([-10,0,-DurchmesserAussen*1.5])
-                Bohrloch(SchraubeM3,0,0,DurchmesserAussen*3);
+                Bohrloch(SchraubeM4,0,0,DurchmesserAussen*3);
         rotate([0,90,90])
             translate([-40,0,-DurchmesserAussen*1.5])
-                Bohrloch(SchraubeM3,0,0,DurchmesserAussen*3);
+                Bohrloch(SchraubeM4,0,0,DurchmesserAussen*3);
     }
 }
 

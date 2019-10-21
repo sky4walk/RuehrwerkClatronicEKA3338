@@ -1,8 +1,9 @@
 // Andre Betz
 // github@AndreBetz.de
-SchraubeM2 = 2.4;
-SchraubeM3 = 3.4;
-
+LochSpiel = 0.1;
+SchraubeM3 = 3+LochSpiel;
+SchraubeM4 = 4+LochSpiel;
+BlechDicke = 3;
 $fn=100;
 
 module Bohrloch(Durchmesser,posX,posY,Hoehe) 

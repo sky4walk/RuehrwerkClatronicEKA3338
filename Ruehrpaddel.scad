@@ -6,7 +6,7 @@ module Ruehrpaddel()
 {
     Laenge = 300;
     Breite = 100;
-    Hoehe  = 2;
+    Hoehe  = 4;
     Ecke   = 30;
     
     difference() 
